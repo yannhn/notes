@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NoteItem from "../NoteItem/NoteItem";
 
 export default function NoteList() {
   const [notes, setNotes] = useState([
@@ -25,11 +26,12 @@ export default function NoteList() {
   return (
     <>
       {notes.map((note) => (
-        <section key={note.id}>
-          <h1>{note.title}</h1>
-          <p>{note.body}</p>
-          <span>{note.date}</span>
-        </section>
+        <NoteItem
+          key={note.id}
+          title={note.title}
+          body={note.body}
+          date={note.date}
+        />
       ))}
     </>
   );
