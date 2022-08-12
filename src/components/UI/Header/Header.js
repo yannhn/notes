@@ -1,7 +1,9 @@
+import { StyledTitle } from "./Styled";
+
 export default function Header() {
   return (
     <>
-      <h1>Test-Header</h1>
+      <StyledTitle>Notes</StyledTitle>
     </>
   );
 }
