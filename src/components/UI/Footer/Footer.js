@@ -1,7 +1,9 @@
+import { StyledFooter } from "./Styled";
+
 export default function Footer() {
   return (
-    <>
-      <h2>FOOTER PLACEHOLDER</h2>
-    </>
+    <StyledFooter>
+      <h2>Footer Placeholder</h2>
+    </StyledFooter>
   );
 }
