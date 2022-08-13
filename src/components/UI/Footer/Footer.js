@@ -1,4 +1,4 @@
-import AddButton from "../../InputNewNote/AddButton/AddButton";
+import AddNoteButton from "../../InputNewNote/AddNoteButton/AddNoteButton";
 import CurrentDate from "../CurrentDate/CurrentDate";
 import { StyledFooter } from "./Styled";
 
@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <CurrentDate />
-      <AddButton />
+      <AddNoteButton />
     </StyledFooter>
   );
 }
