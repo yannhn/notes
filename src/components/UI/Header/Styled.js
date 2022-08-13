@@ -16,7 +16,7 @@ export const StyledTitle = styled.h1`
 export const StyledListItem = styled.li`
   list-style: none;
   display: inline-block;
-  padding: 0 2em;
+  padding: 0 1em;
 `;
 
 export const StyledListAnchor = styled.a`
