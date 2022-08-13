@@ -15,9 +15,12 @@ export default function InputNote() {
       id: nanoid(),
       title: newTitle,
       body: newBody,
-      date: newDate,
+      date: new Date(newDate).toDateString(),
     };
     addNote(newNote);
+    setNewTitle("");
+    setNewBody("");
+    setNewDate("");
   };
 
   return (
@@ -26,18 +29,21 @@ export default function InputNote() {
       <input
         id="title"
         type="text"
+        value={newTitle}
         onChange={(event) => setNewTitle(event.target.value)}
       />
       <label htmlFor="body">Input Body</label>
       <textarea
         id="body"
         type="text"
+        value={newBody}
         onChange={(event) => setNewBody(event.target.value)}
       />
       <label htmlFor="date">Set Date</label>
       <input
         id="date"
         type="date"
+        value={newDate}
         onChange={(event) => setNewDate(event.target.value)}
       />
       <button type="submit">Add note</button>

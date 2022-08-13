@@ -8,19 +8,19 @@ const useStore = create((set) => {
         id: nanoid(),
         title: "note #1",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("December 17, 1995").toISOString(),
+        date: new Date("August 13, 2022").toDateString(),
       },
       {
         id: nanoid(),
         title: "note #2",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("December 17, 1995").toISOString(),
+        date: new Date("August 13, 2022").toDateString(),
       },
       {
         id: nanoid(),
         title: "note #3",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("December 17, 1995").toISOString(),
+        date: new Date("August 13, 2022").toDateString(),
       },
     ],
     addNote: ({ title, body, date }) => {
