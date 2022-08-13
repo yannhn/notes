@@ -23,6 +23,11 @@ const useStore = create((set) => {
         date: new Date("December 17, 1995").toISOString(),
       },
     ],
+    addNote: ({ title, body, date }) => {
+      set((state) => {
+        return { notes: [...state.notes, { id: nanoid(), title, body, date }] };
+      });
+    },
   };
 });
 
