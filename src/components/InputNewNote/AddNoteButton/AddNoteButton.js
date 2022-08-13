@@ -9,7 +9,7 @@ export default function AddNoteButton() {
       <button onClick={() => setShowModal(!showModal)}>Add new note</button>
       {showModal && (
         <InputModal>
-          <InputNote></InputNote>
+          <InputNote />
         </InputModal>
       )}
     </>
