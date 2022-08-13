@@ -6,5 +6,5 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledTitle = styled.h1`
-  padding: 1em;
+  font-size: 2rem;
 `;
