@@ -22,7 +22,7 @@ export const StyledListItem = styled.li`
 export const StyledListAnchor = styled.a`
   text-decoration: none;
   color: #000;
-  transition: all 0.3s ease 0s;
+  transition: 0.2s ease;
 
   &:hover {
     color: #bad;

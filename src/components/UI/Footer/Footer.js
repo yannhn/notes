@@ -1,9 +1,10 @@
+import CurrentDate from "../CurrentDate/CurrentDate";
 import { StyledFooter } from "./Styled";
 
 export default function Footer() {
   return (
     <StyledFooter>
-      <h2>Footer Placeholder</h2>
+      <CurrentDate />
     </StyledFooter>
   );
 }
