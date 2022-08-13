@@ -1,4 +1,9 @@
-import { StyledHeader, StyledTitle } from "./Styled";
+import {
+  StyledHeader,
+  StyledTitle,
+  StyledListItem,
+  StyledListAnchor,
+} from "./Styled";
 
 export default function Header() {
   return (
@@ -6,12 +11,12 @@ export default function Header() {
       <StyledTitle>Notes</StyledTitle>
       <nav>
         <ul>
-          <li>
-            <a href="#">Current</a>
-          </li>
-          <li>
-            <a href="#">All</a>
-          </li>
+          <StyledListItem>
+            <StyledListAnchor href="#">Current</StyledListAnchor>
+          </StyledListItem>
+          <StyledListItem>
+            <StyledListAnchor href="#">All</StyledListAnchor>
+          </StyledListItem>
         </ul>
       </nav>
     </StyledHeader>
