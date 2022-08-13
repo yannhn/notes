@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-const StyledTitle = styled.h1`
+export const StyledHeader = styled.header`
   display: flex;
-  padding: 1em;
   border-bottom: 2px solid black;
 `;
 
-export { StyledTitle };
+export const StyledTitle = styled.h1`
+  padding: 1em;
+`;
