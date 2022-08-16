@@ -1,11 +1,12 @@
-import { StyledNoteContainer, StyledNoteTitle } from "./Styled";
+import NoteCard from "../NoteCard/NoteCard";
+import { StyledNoteTitle } from "./Styled";
 
 export default function NoteItem({ title, body, date }) {
   return (
-    <StyledNoteContainer>
+    <NoteCard>
       <StyledNoteTitle>{title}</StyledNoteTitle>
       <p>{body}</p>
       <span>{date}</span>
-    </StyledNoteContainer>
+    </NoteCard>
   );
 }
