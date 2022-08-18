@@ -8,13 +8,23 @@ export default function NoteList() {
   const dates = notes.map((note) => note.date);
   const uniqueDates = [...new Set(dates)];
 
+  //TODO: Should only display the input of the current week
+  //TODO: filter by current week?
+
+  //FIXME: Currently just shows the last input
+
+  const sortedDate = uniqueDates.sort((a, b) => new Date(b) - new Date(a));
+  console.log(sortedDate);
+  const recentDate = sortedDate.slice(0, 1);
+  console.log(recentDate);
+
   return (
     <>
       {uniqueDates
         .sort((a, b) => new Date(b) - new Date(a))
         .map((date) => (
           <section key={date}>
-            <h3>{date}</h3>
+            <h2>{date}</h2>
             {notes
               .filter((note) => note.date === date)
               .map((note) => (
