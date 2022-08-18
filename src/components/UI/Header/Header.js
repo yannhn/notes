@@ -12,10 +12,10 @@ export default function Header() {
       <nav>
         <ul>
           <StyledListItem>
-            <StyledListAnchor href="#">Current</StyledListAnchor>
+            <StyledListAnchor to="/">Current</StyledListAnchor>
           </StyledListItem>
           <StyledListItem>
-            <StyledListAnchor href="#">All</StyledListAnchor>
+            <StyledListAnchor to="/all">All</StyledListAnchor>
           </StyledListItem>
         </ul>
       </nav>

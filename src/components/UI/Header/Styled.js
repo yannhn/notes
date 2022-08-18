@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -19,7 +20,7 @@ export const StyledListItem = styled.li`
   padding: 0 1em;
 `;
 
-export const StyledListAnchor = styled.a`
+export const StyledListAnchor = styled(NavLink)`
   text-decoration: none;
   color: #000;
   transition: 0.2s ease;
