@@ -12,10 +12,10 @@ export default function Header() {
       <nav>
         <ul>
           <StyledListItem>
-            <StyledListAnchor to="/">Current</StyledListAnchor>
+            <StyledListAnchor to="/">Current week</StyledListAnchor>
           </StyledListItem>
           <StyledListItem>
-            <StyledListAnchor to="/all">All</StyledListAnchor>
+            <StyledListAnchor to="/all">All notes</StyledListAnchor>
           </StyledListItem>
         </ul>
       </nav>

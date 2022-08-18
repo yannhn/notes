@@ -1,10 +1,10 @@
 import Layout from "../components/Layout";
-import NoteList from "../components/Note/NoteList/NoteList";
+import NoteHistory from "../components/Note/NoteHistory/NoteHistory";
 
 export default function AllNotes() {
   return (
     <Layout>
-      <NoteList />
+      <NoteHistory />
     </Layout>
   );
 }
