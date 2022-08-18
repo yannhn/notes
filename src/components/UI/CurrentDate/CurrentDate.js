@@ -7,7 +7,7 @@ export default function CurrentDate() {
     setInterval(() => setDate(new Date()), 1000);
   }, []);
 
-  const today = date.toLocaleDateString("en-GB", {
+  const day = date.toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -23,7 +23,7 @@ export default function CurrentDate() {
   return (
     <>
       <span>
-        {today} ::: {time}
+        {day} ::: {time}
       </span>
     </>
   );
