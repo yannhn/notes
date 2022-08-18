@@ -5,16 +5,23 @@ import NoteItem from "../NoteItem/NoteItem";
 export default function NoteList() {
   const notes = useStore((state) => state.notes);
 
+  const dates = notes.map((note) => note.date);
+  const uniqueDates = [...new Set(dates)];
+
   return (
     <>
-      {notes.map((note) => (
-        <NoteItem
-          key={note.id}
-          title={note.title}
-          body={note.body}
-          date={note.date}
-        />
-      ))}
+      {uniqueDates
+        .sort((a, b) => new Date(b) - new Date(a))
+        .map((date) => (
+          <section key={date}>
+            <h3>{date}</h3>
+            {notes
+              .filter((note) => note.date === date)
+              .map((note) => (
+                <NoteItem key={note.id} title={note.title} body={note.body} />
+              ))}
+          </section>
+        ))}
     </>
   );
 }
