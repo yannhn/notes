@@ -13,6 +13,9 @@ export default function NoteList() {
 
   //FIXME: Currently just shows the last input
 
+  //TODO: The Note should always show the note of the current week
+  //FIXME: There should be no button to input a date, it should automatically detect when the note was created
+
   const sortedDate = uniqueDates.sort((a, b) => new Date(b) - new Date(a));
   console.log(sortedDate);
   const recentDate = sortedDate.slice(0, 1);
