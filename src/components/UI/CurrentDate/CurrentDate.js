@@ -1,20 +1,29 @@
+import { useState, useEffect } from "react";
+
 export default function CurrentDate() {
-  const today = new Date();
+  const [date, setDate] = useState(new Date());
 
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1;
-  const day = today.getDate();
+  useEffect(() => {
+    setInterval(() => setDate(new Date()), 1000);
+  }, []);
 
-  const hours = today.getHours();
-  const minutes = today.getMinutes();
+  const today = date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
-  const fullDate = `${year} - ${month} - ${day}`;
-  const fullTime = `${hours}:${minutes}`;
+  const time = date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+    second: "numeric",
+  });
 
   return (
     <>
       <span>
-        {fullDate} // {fullTime}
+        {today} ::: {time}
       </span>
     </>
   );
