@@ -1,5 +1,8 @@
 import create from "zustand";
+// import { persist } from "zustand/middleware";
 import { nanoid } from "nanoid";
+
+//TODO: Import current date to use as filter in Note-components
 
 const useStore = create((set) => {
   return {
@@ -8,13 +11,13 @@ const useStore = create((set) => {
         id: nanoid(),
         title: "note #1",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("August 13, 2022").toDateString(),
+        date: new Date("August 18, 2022").toDateString(),
       },
       {
         id: nanoid(),
         title: "note #2",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("August 13, 2022").toDateString(),
+        date: new Date("August 18, 2022").toDateString(),
       },
       {
         id: nanoid(),

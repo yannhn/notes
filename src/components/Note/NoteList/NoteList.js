@@ -18,6 +18,20 @@ export default function NoteList() {
   // const recentDate = sortedDate.slice(0, 1);
   // console.log(recentDate);
 
+  console.log(notes);
+
+  const today = new Date();
+  console.log(today);
+
+  const todayNote = notes.filter((note) => note.date === today);
+  console.log(todayNote);
+
+  const test = () => {
+    notes.date === today ? console.log("SUCCESS") : console.log("DID NOT WORK");
+  };
+
+  test();
+
   return (
     <>
       {notes.map((note) => (
