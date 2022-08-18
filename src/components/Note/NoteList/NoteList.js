@@ -32,11 +32,18 @@ export default function NoteList() {
 
   test();
 
+  const events = notes.filter((a) => new Date(a.date) - new Date() > 0);
+  console.log(events);
+
+  //TODO: FILTER MOMENT.JS INPUT?
+
   return (
     <>
-      {notes.map((note) => (
-        <NoteItem key={note.id} title={note.title} body={note.body} />
-      ))}
+      {notes
+        .filter((note) => new Date(note.date) - new Date() > 0)
+        .map((note) => (
+          <NoteItem key={note.id} title={note.title} body={note.body} />
+        ))}
     </>
   );
 }
