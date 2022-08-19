@@ -3,10 +3,14 @@ import moment from "moment";
 import "moment-timezone";
 
 export default function CurrentDate() {
-  const [date, setDate] = useState(moment().format("hh:mm:ss"));
+  const [date, setDate] = useState(
+    moment().format("YYYY [//] ddd [of Week] Wo [//] HH:mm:ss")
+  );
 
   useEffect(() => {
-    setInterval(() => setDate(moment().format("hh:mm:ss")), 1000);
+    setInterval(() => {
+      setDate(moment().format("YYYY [//] ddd [of Week] Wo [//] HH:mm:ss"));
+    }, 1000);
   }, []);
 
   return (
