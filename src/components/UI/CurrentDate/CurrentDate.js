@@ -1,30 +1,17 @@
 import { useState, useEffect } from "react";
+import moment from "moment";
+import "moment-timezone";
 
 export default function CurrentDate() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(moment().format("hh:mm:ss"));
 
   useEffect(() => {
-    setInterval(() => setDate(new Date()), 1000);
+    setInterval(() => setDate(moment().format("hh:mm:ss")), 1000);
   }, []);
-
-  const day = date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-
-  const time = date.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: false,
-    second: "numeric",
-  });
 
   return (
     <>
-      <span>
-        {day} ::: {time}
-      </span>
+      <span>{date}</span>
     </>
   );
 }
