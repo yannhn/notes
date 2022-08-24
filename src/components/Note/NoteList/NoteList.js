@@ -14,7 +14,8 @@ export default function NoteList() {
   //TODO: The Note should always show the note of the current week
   //FIXME: There should be no button to input a date, it should automatically detect when the note was created
 
-  const today = moment();
+  const today = moment().format("L");
+  console.log(today);
 
   if (notes.date === today) {
     console.log("WORKED");
@@ -27,7 +28,7 @@ export default function NoteList() {
 
   return (
     <>
-      {notes.map((note) => (
+      {filteredItems.map((note) => (
         <NoteItem key={note.id} title={note.title} body={note.body} />
       ))}
     </>
