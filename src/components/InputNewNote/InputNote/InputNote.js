@@ -1,3 +1,4 @@
+import moment from "moment";
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import useStore from "../../../hooks/useStore";
@@ -5,7 +6,7 @@ import useStore from "../../../hooks/useStore";
 export default function InputNote() {
   const [newTitle, setNewTitle] = useState("");
   const [newBody, setNewBody] = useState("");
-  const [newDate, setNewDate] = useState("");
+  const [newDate, setNewDate] = useState(moment().format("WW"));
 
   const addNote = useStore((state) => state.addNote);
 
@@ -15,7 +16,7 @@ export default function InputNote() {
       id: nanoid(),
       title: newTitle,
       body: newBody,
-      date: new Date(newDate).toDateString(),
+      date: moment().format("WW"),
     };
     addNote(newNote);
     setNewTitle("");
