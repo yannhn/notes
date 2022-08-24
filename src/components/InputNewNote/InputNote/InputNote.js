@@ -9,6 +9,7 @@ export default function InputNote() {
   const [newDate, setNewDate] = useState(moment().format("WW"));
 
   //FIXME: IT ALWAYS GRABS THE ACTUAL WEEK -> THIS HAS TO BE UPDATED
+  //TODO: DELETE INPUT FOR DATE
 
   const addNote = useStore((state) => state.addNote);
 
