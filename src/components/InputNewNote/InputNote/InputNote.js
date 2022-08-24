@@ -8,6 +8,8 @@ export default function InputNote() {
   const [newBody, setNewBody] = useState("");
   const [newDate, setNewDate] = useState(moment().format("WW"));
 
+  //FIXME: IT ALWAYS GRABS THE ACTUAL WEEK -> THIS HAS TO BE UPDATED
+
   const addNote = useStore((state) => state.addNote);
 
   const submitHandler = (event) => {
