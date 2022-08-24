@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import moment from "moment";
 import useStore from "../../../hooks/useStore";
 import NoteItem from "../NoteItem/NoteItem";
 
@@ -13,37 +14,22 @@ export default function NoteList() {
   //TODO: The Note should always show the note of the current week
   //FIXME: There should be no button to input a date, it should automatically detect when the note was created
 
-  // const sortedDate = uniqueDates.sort((a, b) => new Date(b) - new Date(a));
-  // console.log(sortedDate);
-  // const recentDate = sortedDate.slice(0, 1);
-  // console.log(recentDate);
+  const today = moment();
 
-  console.log(notes);
+  if (notes.date === today) {
+    console.log("WORKED");
+  } else {
+    console.log("DID NOT WORK");
+  }
 
-  const today = new Date();
-  console.log(today);
-
-  const todayNote = notes.filter((note) => note.date === today);
-  console.log(todayNote);
-
-  const test = () => {
-    notes.date === today ? console.log("SUCCESS") : console.log("DID NOT WORK");
-  };
-
-  test();
-
-  const events = notes.filter((a) => new Date(a.date) - new Date() > 0);
-  console.log(events);
-
-  //TODO: FILTER MOMENT.JS INPUT?
+  const filteredItems = notes.filter((notes) => notes.date === today);
+  console.log(filteredItems);
 
   return (
     <>
-      {notes
-        .filter((note) => new Date(note.date) - new Date() > 0)
-        .map((note) => (
-          <NoteItem key={note.id} title={note.title} body={note.body} />
-        ))}
+      {notes.map((note) => (
+        <NoteItem key={note.id} title={note.title} body={note.body} />
+      ))}
     </>
   );
 }
