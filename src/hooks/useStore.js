@@ -3,7 +3,8 @@ import create from "zustand";
 import { nanoid } from "nanoid";
 import moment from "moment";
 
-//TODO: Import current date to use as filter in Note-components
+//TODO Import current date to use as filter in Note-components
+//TODO Archived todos???
 
 const useStore = create((set) => {
   return {
@@ -30,6 +31,11 @@ const useStore = create((set) => {
     addNote: ({ title, body, date }) => {
       set((state) => {
         return { notes: [...state.notes, { id: nanoid(), title, body, date }] };
+      });
+    },
+    deleteNote: (id) => {
+      set((state) => {
+        return { notes: state.notes.filter((note) => note.id !== id) };
       });
     },
   };

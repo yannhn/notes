@@ -5,6 +5,8 @@ import {
   StyledListAnchor,
 } from "./Styled";
 
+// TODO Link logo to main page
+
 export default function Header() {
   return (
     <StyledHeader>

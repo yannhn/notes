@@ -42,6 +42,7 @@ export default function InputNote() {
         type="text"
         value={newBody}
         onChange={(event) => setNewBody(event.target.value)}
+        required
       />
       <label htmlFor="date">Set Date</label>
       <input
@@ -49,6 +50,7 @@ export default function InputNote() {
         type="date"
         value={newDate}
         onChange={(event) => setNewDate(event.target.value)}
+        hidden
       />
       <button type="submit">Add note</button>
     </form>
