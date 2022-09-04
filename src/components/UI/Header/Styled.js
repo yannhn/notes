@@ -39,21 +39,21 @@ export const StyledListAnchor = styled(NavLink)`
   text-decoration: none;
   color: black;
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
     bottom: 0;
     left: 0;
-    background-color: black;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    width: 100%;
+    height: 2px;
+    background: black;
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
   }
-  &:hover::after {
+
+  &:hover::before {
     transform: scaleX(1);
-    transform-origin: bottom left;
-    font-weight: bold;
   }
 `;
