@@ -20,12 +20,40 @@ export const StyledListItem = styled.li`
   padding: 0 1em;
 `;
 
-export const StyledListAnchor = styled(NavLink)`
-  text-decoration: none;
-  color: #000;
-  transition: 0.2s ease;
+// export const StyledListAnchor = styled(NavLink)`
+//   text-decoration: none;
+//   color: #000;
+//   transition: 0.2s ease;
 
-  &:hover {
-    color: #bad;
+//   &:hover {
+//     color: #bad;
+//     text-decoration-line: underline;
+//     text-decoration-style: wavy;
+//   }
+// `;
+
+export const StyledListAnchor = styled(NavLink)`
+  display: inline-block;
+  position: relative;
+
+  text-decoration: none;
+  color: black;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
   }
 `;
