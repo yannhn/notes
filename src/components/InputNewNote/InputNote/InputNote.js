@@ -1,4 +1,5 @@
 import moment from "moment";
+
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import useStore from "../../../hooks/useStore";
@@ -6,10 +7,7 @@ import useStore from "../../../hooks/useStore";
 export default function InputNote() {
   const [newTitle, setNewTitle] = useState("");
   const [newBody, setNewBody] = useState("");
-  const [newDate, setNewDate] = useState(moment().format("WW"));
-
-  //FIXME: IT ALWAYS GRABS THE ACTUAL WEEK -> THIS HAS TO BE UPDATED
-  //TODO: DELETE INPUT FOR DATE
+  const [newDate, setNewDate] = useState("");
 
   const addNote = useStore((state) => state.addNote);
 

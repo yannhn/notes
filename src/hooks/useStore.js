@@ -19,13 +19,13 @@ const useStore = create((set) => {
         id: nanoid(),
         title: "note #2",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("August 24, 2022").toDateString(),
+        date: moment("2022.06.06", "YYYY.MM.DD").format("WW"),
       },
       {
         id: nanoid(),
         title: "note #3",
         body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        date: new Date("August 24, 2022").toDateString(),
+        date: moment("2021.03.03", "YYYY.MM.DD").format("LLL"),
       },
     ],
     addNote: ({ title, body, date }) => {
