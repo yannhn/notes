@@ -1,3 +1,4 @@
+import DeleteNoteMessage from "../../UI/DeleteNoteMessage/DeleteNoteMessage";
 import NoteCard from "../NoteCard/NoteCard";
 import { StyledNoteTitle } from "./Styled";
 
@@ -6,9 +7,7 @@ export default function NoteItem({ title, body, deleteNote }) {
     <NoteCard>
       <StyledNoteTitle>{title}</StyledNoteTitle>
       <p>{body}</p>
-      <button type="button" onClick={deleteNote}>
-        Delete Note
-      </button>
+      <DeleteNoteMessage deleteNote={deleteNote} />
     </NoteCard>
   );
 }

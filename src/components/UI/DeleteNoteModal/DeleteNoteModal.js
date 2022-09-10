@@ -1,3 +1,3 @@
 export default function DeleteNoteModal({ children }) {
-  return <dialog>{children}</dialog>;
+  return <dialog open>{children}</dialog>;
 }
