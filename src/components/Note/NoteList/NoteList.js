@@ -1,11 +1,15 @@
 // import { useState } from "react";
 import moment from "moment";
+import { useState } from "react";
 import useStore from "../../../hooks/useStore";
+import AddNoteButton from "../../InputNewNote/AddNoteButton/AddNoteButton";
+import InputNote from "../../InputNewNote/InputNote/InputNote";
 import NoteItem from "../NoteItem/NoteItem";
 
 export default function NoteList() {
   const notes = useStore((state) => state.notes);
   const deleteNote = useStore((state) => state.deleteNote);
+  const [showModal, setShowModal] = useState(false);
 
   const today = moment().format("WW");
 
@@ -22,6 +26,13 @@ export default function NoteList() {
           deleteNote={() => deleteNote(note.id)}
         />
       ))}
+      <AddNoteButton />
+      <button onClick={() => setShowModal(!showModal)}>TEST</button>
+      {showModal && (
+        <>
+          <InputNote />
+        </>
+      )}
     </>
   );
 }

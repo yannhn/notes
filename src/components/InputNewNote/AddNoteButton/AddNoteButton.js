@@ -1,17 +1,15 @@
 import { useState } from "react";
-import InputModal from "../InputModal/InputModal";
 import InputNote from "../InputNote/InputNote";
+import { StyledInputNoteButton } from "./Styled";
 
 export default function AddNoteButton() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button onClick={() => setShowModal(!showModal)}>Add new note</button>
-      {showModal && (
-        <InputModal>
-          <InputNote />
-        </InputModal>
-      )}
+      <StyledInputNoteButton onClick={() => setShowModal(!showModal)}>
+        Add new note
+      </StyledInputNoteButton>
+      {showModal && <InputNote />}
     </>
   );
 }
