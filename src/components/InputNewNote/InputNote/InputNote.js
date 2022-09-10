@@ -42,7 +42,7 @@ export default function InputNote() {
         onChange={(event) => setNewBody(event.target.value)}
         required
       />
-      <label htmlFor="date">Set Date</label>
+      <label htmlFor="date"></label>
       <input
         id="date"
         type="date"

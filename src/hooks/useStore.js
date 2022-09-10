@@ -38,6 +38,8 @@ const useStore = create((set) => {
         return { notes: state.notes.filter((note) => note.id !== id) };
       });
     },
+    showModal: false,
+    openModal: () => set((state) => ({ showModal: !state.showModal })),
   };
 });
 

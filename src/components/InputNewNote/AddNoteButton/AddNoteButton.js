@@ -4,6 +4,7 @@ import { StyledInputNoteButton } from "./Styled";
 
 export default function AddNoteButton() {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <StyledInputNoteButton onClick={() => setShowModal(!showModal)}>

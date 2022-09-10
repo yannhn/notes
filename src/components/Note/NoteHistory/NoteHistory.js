@@ -1,15 +1,13 @@
 // import { useState } from "react";
-import moment from "moment";
 import useStore from "../../../hooks/useStore";
 import NoteItem from "../NoteItem/NoteItem";
 
 export default function NoteHistory() {
   const notes = useStore((state) => state.notes);
+  const deleteNote = useStore((state) => state.deleteNote);
 
   const dates = notes.map((note) => note.date);
   const uniqueDates = [...new Set(dates)];
-
-  const today = moment().format("WW");
 
   return (
     <>
@@ -21,7 +19,12 @@ export default function NoteHistory() {
             {notes
               .filter((note) => note.date === date)
               .map((note) => (
-                <NoteItem key={note.id} title={note.title} body={note.body} />
+                <NoteItem
+                  key={note.id}
+                  title={note.title}
+                  body={note.body}
+                  deleteNote={() => deleteNote(note.id)}
+                />
               ))}
           </section>
         ))}
