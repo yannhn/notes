@@ -6,10 +6,9 @@ import AddNoteButton from "../../InputNewNote/AddNoteButton/AddNoteButton";
 import InputNote from "../../InputNewNote/InputNote/InputNote";
 import NoteItem from "../NoteItem/NoteItem";
 
-export default function NoteList() {
+export default function NoteList({ isModalOpen }) {
   const notes = useStore((state) => state.notes);
   const deleteNote = useStore((state) => state.deleteNote);
-  const [showModal, setShowModal] = useState(false);
 
   const today = moment().format("WW");
 
@@ -26,13 +25,7 @@ export default function NoteList() {
           deleteNote={() => deleteNote(note.id)}
         />
       ))}
-      <AddNoteButton />
-      <button onClick={() => setShowModal(!showModal)}>TEST</button>
-      {showModal && (
-        <>
-          <InputNote />
-        </>
-      )}
+      {isModalOpen && <InputNote />}
     </>
   );
 }
